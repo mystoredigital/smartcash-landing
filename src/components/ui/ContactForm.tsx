@@ -83,36 +83,21 @@ export function ContactForm() {
     trackEvent('InitiateCheckout', { content_name: 'Demo SmartCash' });
 
     try {
-      const apiKey = process.env.NEXT_PUBLIC_GHL_API_KEY;
-      const locationId = process.env.NEXT_PUBLIC_GHL_LOCATION_ID;
+      const res = await fetch('/api/submit-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          chequeAmount: formData.chequeAmount,
+          message: formData.message,
+        }),
+      });
 
-      if (apiKey) {
-        const nameParts = formData.name.trim().split(' ');
-        const firstName = nameParts[0] || '';
-        const lastName = nameParts.slice(1).join(' ') || '';
-
-        await fetch('https://services.leadconnectorhq.com/contacts/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`,
-            'Version': '2021-07-28',
-          },
-          body: JSON.stringify({
-            firstName,
-            lastName,
-            email: formData.email,
-            phone: formData.phone,
-            companyName: formData.company,
-            locationId,
-            source: 'SmartCash Landing Page',
-            tags: ['smartcash-lead', 'landing-page'],
-            customFields: [
-              { id: 'MSrY6qoPbTFRZeWqrtQI', value: formData.chequeAmount },
-              { id: 'WxPjPYXDaaiSLI1s4GYO', value: formData.message },
-            ],
-          }),
-        });
+      if (!res.ok) {
+        throw new Error('Error enviando formulario');
       }
 
       trackEvent('Lead', {
