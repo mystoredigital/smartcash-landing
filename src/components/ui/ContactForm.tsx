@@ -10,8 +10,7 @@ interface FormData {
   email: string;
   phone: string;
   company: string;
-  ruc: string;
-  volume: string;
+  chequeAmount: string;
   message: string;
 }
 
@@ -19,11 +18,12 @@ interface FormErrors {
   [key: string]: string;
 }
 
-const volumeOptions = [
-  { value: '1-20', label: '1 - 20 operaciones/mes' },
-  { value: '21-50', label: '21 - 50 operaciones/mes' },
-  { value: '51-100', label: '51 - 100 operaciones/mes' },
-  { value: '100+', label: 'Mas de 100 operaciones/mes' },
+const amountOptions = [
+  { value: '$500 - $2,000', label: '$500 - $2,000' },
+  { value: '$2,000 - $5,000', label: '$2,000 - $5,000' },
+  { value: '$5,000 - $10,000', label: '$5,000 - $10,000' },
+  { value: '$10,000 - $25,000', label: '$10,000 - $25,000' },
+  { value: '$25,000+', label: 'Mas de $25,000' },
 ];
 
 export function ContactForm() {
@@ -32,8 +32,7 @@ export function ContactForm() {
     email: '',
     phone: '',
     company: '',
-    ruc: '',
-    volume: '',
+    chequeAmount: '',
     message: '',
   });
 
@@ -109,8 +108,7 @@ export function ContactForm() {
             source: 'SmartCash Landing Page',
             tags: ['smartcash-lead', 'landing-page'],
             customField: {
-              ruc: formData.ruc,
-              volumen_mensual: formData.volume,
+              monto_cheque: formData.chequeAmount,
               mensaje: formData.message,
             },
           }),
@@ -135,8 +133,7 @@ export function ContactForm() {
           email: '',
           phone: '',
           company: '',
-          ruc: '',
-          volume: '',
+          chequeAmount: '',
           message: '',
         });
       }, 3000);
@@ -145,7 +142,7 @@ export function ContactForm() {
       setIsSubmitted(true);
       setTimeout(() => {
         setIsSubmitted(false);
-        setFormData({ name: '', email: '', phone: '', company: '', ruc: '', volume: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', company: '', chequeAmount: '', message: '' });
       }, 3000);
     } finally {
       setIsSubmitting(false);
@@ -161,7 +158,7 @@ export function ContactForm() {
       <CheckCircleIcon className="w-16 h-16 text-green-500 mx-auto mb-4" />
       <h3 className="text-2xl font-bold text-white mb-2">Mensaje Enviado!</h3>
       <p className="text-gray-300">
-        Te contactaremos en las proximas 24 horas para agendar tu demo personalizada.
+        Te contactaremos en las proximas 24 horas para darte una cotizacion personalizada.
       </p>
     </motion.div>
   );
@@ -277,36 +274,21 @@ export function ContactForm() {
               </div>
             </div>
 
-            {/* Business Information */}
+            {/* Cheque Information */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="ruc" className="block text-sm font-medium text-gray-300 mb-2">
-                  RUC
-                </label>
-                <input
-                  type="text"
-                  id="ruc"
-                  name="ruc"
-                  value={formData.ruc}
-                  onChange={handleChange}
-                  className="w-full bg-dark-800/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-teal-500 transition-colors"
-                  placeholder="1234567890001"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="volume" className="block text-sm font-medium text-gray-300 mb-2">
-                  Volumen Mensual de Operaciones
+                <label htmlFor="chequeAmount" className="block text-sm font-medium text-gray-300 mb-2">
+                  Monto Aproximado del Cheque
                 </label>
                 <select
-                  id="volume"
-                  name="volume"
-                  value={formData.volume}
+                  id="chequeAmount"
+                  name="chequeAmount"
+                  value={formData.chequeAmount}
                   onChange={handleChange}
                   className="w-full bg-dark-800/50 border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-teal-500 transition-colors"
                 >
                   <option value="">Selecciona un rango</option>
-                  {volumeOptions.map(option => (
+                  {amountOptions.map(option => (
                     <option key={option.value} value={option.value} className="bg-dark-800">
                       {option.label}
                     </option>
@@ -318,16 +300,16 @@ export function ContactForm() {
             {/* Message */}
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                Cuentanos sobre tu operacion (Opcional)
+                Cuentanos mas (Opcional)
               </label>
               <textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                rows={4}
+                rows={3}
                 className="w-full bg-dark-800/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-teal-500 transition-colors resize-none"
-                placeholder="Describe brevemente tu operacion de factoring actual..."
+                placeholder="Plazo del cheque, banco, o cualquier detalle adicional..."
               />
             </div>
 
@@ -347,7 +329,7 @@ export function ContactForm() {
               ) : (
                 <>
                   <PaperAirplaneIcon className="w-6 h-6" />
-                  Solicitar Demo Gratuita
+                  Quiero Cobrar Mi Cheque
                 </>
               )}
             </motion.button>
@@ -355,8 +337,8 @@ export function ContactForm() {
             {/* Trust indicators */}
             <div className="text-center text-sm text-gray-400 space-y-1">
               <p>Respuesta garantizada en 24 horas</p>
-              <p>Demo personalizada 100% gratuita</p>
-              <p>Sin spam, solo valor real</p>
+              <p>Cotizacion personalizada sin compromiso</p>
+              <p>Tu dinero el mismo dia</p>
             </div>
           </motion.form>
         )}

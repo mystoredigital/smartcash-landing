@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRightIcon, SparklesIcon, BanknotesIcon, DocumentTextIcon, ChartBarIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon, SparklesIcon, BanknotesIcon, DocumentTextIcon, ClockIcon } from '@heroicons/react/24/outline';
 import { scrollToElement } from '@/lib/utils';
 import { trackEvent, trackCustomEvent } from '@/lib/fbpixel';
 
@@ -41,7 +41,7 @@ const floatingIconVariants = {
 
 export function Hero() {
   const handleCTAClick = () => {
-    trackEvent('Schedule', { content_name: 'Hero - Solicitar Demo' });
+    trackEvent('Schedule', { content_name: 'Hero - Quiero Mi Dinero' });
     scrollToElement('contact');
   };
 
@@ -73,7 +73,7 @@ export function Hero() {
           className="absolute bottom-40 left-20 text-teal-400/25"
           style={{ animationDelay: '4s' }}
         >
-          <ChartBarIcon className="w-12 h-12" />
+          <ClockIcon className="w-12 h-12" />
         </motion.div>
 
         {/* Gradient orbs */}
@@ -104,23 +104,22 @@ export function Hero() {
           <motion.div variants={itemVariants}>
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-sm font-medium">
               <SparklesIcon className="w-4 h-4 mr-2" />
-              Factoring Digital de Nueva Generacion
+              Liquidez Inmediata para tu Negocio
             </div>
           </motion.div>
 
           {/* Main headline */}
           <motion.div variants={itemVariants} className="space-y-4">
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-display font-bold leading-tight">
-              <span className="text-white">Convierte Facturas en</span>
+              <span className="text-white">Tienes Cheques?</span>
               <br />
-              <span className="text-teal-gradient">Efectivo al Instante</span>
+              <span className="text-teal-gradient">Te Damos Efectivo Hoy</span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              La plataforma de factoring digital que automatiza tus operaciones,{' '}
-              <span className="text-teal-400 font-semibold">calcula comisiones</span>,{' '}
-              <span className="text-teal-400 font-semibold">genera pagares</span> y te da{' '}
-              <span className="text-teal-400 font-semibold">control total</span>{' '}
-              desde una sola herramienta
+              Envia la foto de tu cheque y{' '}
+              <span className="text-teal-400 font-semibold">recibe tu dinero al instante</span>.
+              Sin tramites bancarios, sin esperar semanas.{' '}
+              <span className="text-teal-400 font-semibold">Nosotros cobramos por ti.</span>
             </p>
           </motion.div>
 
@@ -129,15 +128,15 @@ export function Hero() {
             <div className="flex flex-wrap justify-center gap-8 text-sm sm:text-base">
               <div className="flex items-center text-gray-300">
                 <div className="w-2 h-2 bg-teal-500 rounded-full mr-3" />
-                Liquidez Inmediata
+                Dinero en Menos de 24 Horas
               </div>
               <div className="flex items-center text-gray-300">
                 <div className="w-2 h-2 bg-teal-500 rounded-full mr-3" />
-                Control Total 24/7
+                Sin Papeleo Complicado
               </div>
               <div className="flex items-center text-gray-300">
                 <div className="w-2 h-2 bg-teal-500 rounded-full mr-3" />
-                100% Digital
+                Comisiones Transparentes
               </div>
             </div>
           </motion.div>
@@ -150,7 +149,7 @@ export function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Solicitar Demo Gratis
+              Quiero Mi Dinero Hoy
               <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform inline" />
             </motion.button>
 
@@ -160,21 +159,21 @@ export function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Ver Como Funciona
+              Como Funciona?
             </motion.button>
           </motion.div>
 
           {/* Trust indicators */}
           <motion.div variants={itemVariants} className="pt-8">
             <p className="text-gray-400 text-sm mb-4">
-              Desarrollado para el mercado ecuatoriano
+              Servicio de factoring confiable en Ecuador
             </p>
             <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-              <div className="text-teal-400 font-semibold">Dashboard Inteligente</div>
+              <div className="text-teal-400 font-semibold">Rapido y Seguro</div>
               <div className="w-1 h-1 bg-teal-500 rounded-full hidden sm:block" />
-              <div className="text-teal-400 font-semibold">Pagares Digitales</div>
+              <div className="text-teal-400 font-semibold">Operaciones Transparentes</div>
               <div className="w-1 h-1 bg-teal-500 rounded-full hidden sm:block" />
-              <div className="text-teal-400 font-semibold">App Movil</div>
+              <div className="text-teal-400 font-semibold">Seguimiento en Linea</div>
             </div>
           </motion.div>
         </motion.div>
@@ -188,7 +187,7 @@ export function Hero() {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <div className="flex flex-col items-center space-y-2">
-          <span className="text-gray-400 text-xs">Scroll para descubrir mas</span>
+          <span className="text-gray-400 text-xs">Descubre como funciona</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}

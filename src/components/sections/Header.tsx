@@ -8,9 +8,8 @@ import { cn, scrollToElement } from '@/lib/utils';
 const navigationItems = [
   { name: 'Inicio', href: 'hero' },
   { name: 'Como Funciona', href: 'how-it-works' },
-  { name: 'Funcionalidades', href: 'features' },
+  { name: 'Por que SmartCash', href: 'features' },
   { name: 'Beneficios', href: 'benefits' },
-  { name: 'Precios', href: 'pricing' },
   { name: 'FAQ', href: 'faq' },
 ];
 
@@ -89,7 +88,7 @@ export function Header() {
               onClick={() => handleNavClick('contact')}
               className="btn-primary text-sm"
             >
-              Solicitar Demo
+              Quiero Mi Dinero
             </button>
           </motion.div>
 
@@ -141,7 +140,7 @@ export function Header() {
                 onClick={() => handleNavClick('contact')}
                 className="btn-primary w-full mt-4 text-sm"
               >
-                Solicitar Demo
+                Quiero Mi Dinero
               </motion.button>
             </div>
           </motion.div>

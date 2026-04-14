@@ -2,33 +2,33 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { PlayIcon, ClockIcon, UserPlusIcon, DocumentArrowUpIcon, CalculatorIcon, BanknotesIcon } from '@heroicons/react/24/outline';
+import { PlayIcon, ClockIcon, CameraIcon, CurrencyDollarIcon, CheckBadgeIcon } from '@heroicons/react/24/outline';
 import { trackEvent } from '@/lib/fbpixel';
 
 const processSteps = [
   {
-    icon: UserPlusIcon,
-    title: 'Registra tu Empresa',
-    description: 'Crea tu cuenta, valida tu RUC y configura tu perfil de factoring en minutos.',
-    duration: '5 min',
+    icon: CameraIcon,
+    title: 'Envias tu Cheque',
+    description: 'Toma una foto clara de tu cheque y envianosla junto con la factura. Asi de simple.',
+    duration: '2 min',
   },
   {
-    icon: DocumentArrowUpIcon,
-    title: 'Carga tus Documentos',
-    description: 'Sube facturas, cheques y documentos de respaldo. Todo digital, cero papeleo.',
+    icon: CurrencyDollarIcon,
+    title: 'Te Hacemos una Oferta',
+    description: 'Revisamos el cheque, calculamos la comision de forma transparente y te presentamos la oferta.',
     duration: 'Inmediato',
   },
   {
-    icon: CalculatorIcon,
-    title: 'Recibe tu Liquidacion',
-    description: 'El sistema calcula automaticamente comisiones, plazos y montos de liquidacion.',
-    duration: 'Automatico',
+    icon: CheckBadgeIcon,
+    title: 'Recibes tu Dinero',
+    description: 'Aceptas la oferta y te transferimos el efectivo a tu cuenta. Sin vueltas, sin esperas.',
+    duration: 'Mismo dia',
   },
   {
-    icon: BanknotesIcon,
-    title: 'Cobra tu Efectivo',
-    description: 'Recibe tu dinero mientras SmartCash gestiona el cobro y seguimiento completo.',
-    duration: 'Al instante',
+    icon: ClockIcon,
+    title: 'Nosotros Cobramos',
+    description: 'Nos encargamos de cobrar el cheque en la fecha de vencimiento. Tu solo disfrutas tu liquidez.',
+    duration: 'Automatico',
   },
 ];
 
@@ -78,15 +78,16 @@ export function HowItWorks() {
           <motion.div variants={itemVariants} className="text-center space-y-4">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-sm font-medium">
               <PlayIcon className="w-4 h-4 mr-2" />
-              Proceso Simple y Rapido
+              Asi de Facil
             </div>
             <h2 className="text-4xl sm:text-5xl font-display font-bold text-white">
-              Como <span className="text-teal-gradient">Funciona</span> SmartCash
+              Tu Cheque se Convierte en{' '}
+              <span className="text-teal-gradient">Efectivo</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              De la factura al efectivo en{' '}
-              <span className="text-teal-400 font-semibold">4 pasos simples</span>.{' '}
-              Sin complicaciones, sin papeleo, sin esperas.
+              Un proceso{' '}
+              <span className="text-teal-400 font-semibold">rapido, simple y transparente</span>.
+              Sin filas en el banco, sin tramites eternos.
             </p>
           </motion.div>
 
@@ -142,19 +143,19 @@ export function HowItWorks() {
           <motion.div variants={itemVariants} className="text-center">
             <div className="bg-dark-800/50 border border-teal-500/20 rounded-2xl p-8 max-w-3xl mx-auto">
               <h3 className="text-2xl font-display font-bold text-white mb-4">
-                Listo para <span className="text-teal-gradient">Digitalizar</span> tu Factoring?
+                Tienes un Cheque que{' '}
+                <span className="text-teal-gradient">Necesitas Cobrar</span>?
               </h3>
               <p className="text-gray-300 mb-6">
-                Solicita una demo personalizada y descubre como SmartCash puede
-                transformar tus operaciones de factoring
+                No esperes semanas. Contactanos ahora y ten tu dinero hoy mismo.
               </p>
               <motion.button
-                onClick={() => { trackEvent('Schedule', { content_name: 'HowItWorks - Demo' }); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}
+                onClick={() => { trackEvent('Schedule', { content_name: 'HowItWorks - Contactar' }); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}
                 className="btn-primary text-lg px-8 py-4"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Solicitar Demo Gratuita
+                Contactar Ahora
               </motion.button>
             </div>
           </motion.div>

@@ -3,45 +3,39 @@ export function StructuredData() {
 
   const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "FinancialService",
     "name": "SmartCash",
-    "description": "Sistema de gestion de factoring digital para Ecuador. Convierte facturas en efectivo al instante con control financiero total.",
+    "description": "Servicio de factoring en Ecuador. Convertimos tus cheques en efectivo inmediato con comisiones transparentes y seguimiento digital.",
     "url": siteUrl,
     "logo": `${siteUrl}/logo-smartcash.png`,
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Web, iOS, Android",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "description": "Demo gratuita disponible"
+    "areaServed": {
+      "@type": "Country",
+      "name": "Ecuador"
     },
-    "provider": {
-      "@type": "Organization",
-      "name": "SmartCash",
-      "url": siteUrl,
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": process.env.NEXT_PUBLIC_CONTACT_PHONE || "",
-        "contactType": "Customer Service",
-        "availableLanguage": ["Spanish"]
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": process.env.NEXT_PUBLIC_CONTACT_PHONE || "",
+      "contactType": "Customer Service",
+      "availableLanguage": ["Spanish"]
+    },
+    "service": [
+      {
+        "@type": "Service",
+        "name": "Descuento de Cheques",
+        "description": "Convertimos tus cheques por cobrar en efectivo inmediato"
+      },
+      {
+        "@type": "Service",
+        "name": "Factoring de Facturas",
+        "description": "Liquidez inmediata a cambio de tus facturas por cobrar"
       }
-    },
-    "featureList": [
-      "Dashboard de factoring en tiempo real",
-      "Gestion integral de clientes con validacion RUC",
-      "Seguimiento de movimientos financieros",
-      "Pagares digitales con firma electronica",
-      "Reportes y analitica avanzada",
-      "App movil para operaciones en campo",
-      "Portal de clientes autoservicio"
     ]
   };
 
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "SmartCash - Factoring Digital Ecuador",
+    "name": "SmartCash - Efectivo Inmediato por tus Cheques",
     "url": siteUrl,
   };
 

@@ -3,50 +3,50 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import {
-  ChartBarSquareIcon,
-  UsersIcon,
-  DocumentCheckIcon,
-  DevicePhoneMobileIcon,
-  GlobeAltIcon,
-  PresentationChartLineIcon,
-  CpuChipIcon,
+  BoltIcon,
+  ShieldCheckIcon,
+  ClockIcon,
+  EyeIcon,
   UserGroupIcon,
+  DevicePhoneMobileIcon,
+  BanknotesIcon,
+  DocumentCheckIcon,
 } from '@heroicons/react/24/outline';
 
 const mainFeatures = [
   {
-    icon: ChartBarSquareIcon,
-    title: 'Dashboard Inteligente',
-    description: 'Metricas en tiempo real de tu operacion de factoring. Total facturado, comisiones, cartera pendiente y mas.',
+    icon: BoltIcon,
+    title: 'Dinero Rapido',
+    description: 'Recibe tu efectivo el mismo dia. No tienes que esperar semanas a que el banco procese tu cheque.',
     highlights: [
-      'Metricas financieras en vivo',
-      'Cheques proximos a vencer',
-      'Control de 6 estados operativos',
-      'Graficos y reportes visuales',
+      'Transferencia en menos de 24 horas',
+      'Sin tramites bancarios largos',
+      'Proceso 100% digital',
+      'Atencion personalizada',
     ],
     color: 'from-teal-400 to-teal-600',
   },
   {
-    icon: UsersIcon,
-    title: 'Gestion de Clientes',
-    description: 'Administra todo el ciclo de vida de tus clientes con validacion RUC, reputacion y seguimiento completo.',
+    icon: ShieldCheckIcon,
+    title: 'Seguro y Confiable',
+    description: 'Tu informacion y operaciones protegidas. Cada transaccion queda registrada con total transparencia.',
     highlights: [
-      'Validacion de RUC Ecuador',
-      'Sistema de reputacion y rating',
-      'Historial de operaciones',
-      'Representante legal y contactos',
+      'Registro de cada operacion',
+      'Comisiones claras desde el inicio',
+      'Pagares digitales como respaldo',
+      'Historial completo de movimientos',
     ],
     color: 'from-primary to-teal-500',
   },
   {
-    icon: DocumentCheckIcon,
-    title: 'Documentos Digitales',
-    description: 'Genera pagares con firma digital, liquidaciones automaticas y adjunta comprobantes sin papel.',
+    icon: EyeIcon,
+    title: 'Seguimiento en Linea',
+    description: 'Consulta el estado de tus operaciones en cualquier momento desde tu celular o computadora.',
     highlights: [
-      'Pagares con firma electronica',
-      'Liquidaciones automaticas',
-      'Adjuntar comprobantes y recibos',
-      'Generacion PDF profesional',
+      'Portal de cliente exclusivo',
+      'Estado en tiempo real de tus cheques',
+      'Notificaciones de cada cambio',
+      'Acceso desde cualquier dispositivo',
     ],
     color: 'from-teal-600 to-primary-dark',
   },
@@ -54,24 +54,24 @@ const mainFeatures = [
 
 const additionalFeatures = [
   {
-    icon: UserGroupIcon,
-    title: 'Multi-usuario',
-    description: 'Roles de Administrador y Operador con permisos diferenciados',
+    icon: ClockIcon,
+    title: 'Sin Esperas',
+    description: 'Olvida los 30, 60 o 90 dias. Tu dinero lo necesitas hoy.',
   },
   {
-    icon: GlobeAltIcon,
-    title: 'Portal de Clientes',
-    description: 'Tus clientes consultan sus operaciones en un portal publico',
+    icon: DocumentCheckIcon,
+    title: 'Solo una Foto',
+    description: 'Envias la foto del cheque y la factura. Nosotros hacemos el resto.',
+  },
+  {
+    icon: UserGroupIcon,
+    title: 'Atencion Personal',
+    description: 'Un equipo dedicado a atenderte y resolver tus dudas.',
   },
   {
     icon: DevicePhoneMobileIcon,
-    title: 'App Movil',
-    description: 'Opera desde cualquier lugar con la app para iOS y Android',
-  },
-  {
-    icon: PresentationChartLineIcon,
-    title: 'Reportes y Analitica',
-    description: 'Graficos de barras, torta y areas para analizar tu negocio',
+    title: 'Desde tu Celular',
+    description: 'Opera desde cualquier lugar, cuando lo necesites.',
   },
 ];
 
@@ -120,16 +120,16 @@ export function Features() {
           {/* Section header */}
           <motion.div variants={itemVariants} className="text-center space-y-4">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-sm font-medium">
-              <CpuChipIcon className="w-4 h-4 mr-2" />
-              Plataforma Completa
+              <BanknotesIcon className="w-4 h-4 mr-2" />
+              Por que SmartCash
             </div>
             <h2 className="text-4xl sm:text-5xl font-display font-bold text-white">
-              Todo lo que Necesitas para tu{' '}
-              <span className="text-teal-gradient">Factoring</span>
+              La Forma Mas <span className="text-teal-gradient">Inteligente</span>{' '}
+              de Cobrar
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Una solucion integral que cubre cada aspecto de tu operacion,{' '}
-              <span className="text-teal-400 font-semibold">desde la negociacion hasta el cobro</span>
+              Mientras otros esperan, tu{' '}
+              <span className="text-teal-400 font-semibold">ya tienes tu dinero trabajando</span>
             </p>
           </motion.div>
 
@@ -180,7 +180,8 @@ export function Features() {
           <motion.div variants={itemVariants} className="space-y-12">
             <div className="text-center">
               <h3 className="text-2xl sm:text-3xl font-display font-bold text-white">
-                Y Mucho <span className="text-teal-gradient">Mas</span>
+                Pensado para que{' '}
+                <span className="text-teal-gradient">Tu Ganes</span>
               </h3>
             </div>
 

@@ -7,39 +7,39 @@ import { ChevronDownIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/out
 
 const faqs = [
   {
-    question: 'Que es el factoring y como funciona SmartCash?',
+    question: 'Como funciona el servicio de SmartCash?',
     answer:
-      'El factoring es una herramienta financiera que permite convertir facturas o cheques por cobrar en efectivo inmediato. SmartCash digitaliza todo este proceso: desde la carga de documentos hasta el calculo automatico de comisiones, generacion de pagares y seguimiento del cobro.',
+      'Es muy simple: tu nos envias la foto de tu cheque junto con la factura correspondiente. Nosotros revisamos la informacion, te hacemos una oferta con la comision detallada, y si aceptas, te transferimos el dinero a tu cuenta el mismo dia. Nosotros nos encargamos de cobrar el cheque cuando venza.',
   },
   {
-    question: 'Que documentos necesito para comenzar?',
+    question: 'Que necesito para empezar?',
     answer:
-      'Solo necesitas tu RUC empresarial, los datos de tu representante legal y los documentos de las operaciones (facturas, cheques). SmartCash valida tu RUC automaticamente y te guia en cada paso de la configuracion.',
+      'Solo necesitas tener un cheque por cobrar y una factura que respalde la operacion. Nos envias una foto legible del cheque, los datos de tu empresa y listo. El primer registro es rapido y para las siguientes operaciones el proceso es aun mas agil.',
   },
   {
-    question: 'Como se calculan las comisiones y tasas?',
+    question: 'Cuanto cobran de comision?',
     answer:
-      'SmartCash calcula automaticamente las comisiones basandose en el monto, plazo de cobro y tasa configurada (por defecto 4% / 30 dias). Incluye IVA (15% configurable), capital recuperable y monto neto a transferir. Todo transparente y sin errores.',
+      'La comision se calcula de forma transparente segun el monto y el plazo del cheque. Antes de cerrar cualquier operacion, te mostramos exactamente cuanto recibes y cuanto es la comision. Sin cargos ocultos, sin sorpresas.',
   },
   {
-    question: 'Es seguro subir mis documentos a la plataforma?',
+    question: 'Cuanto tiempo tarda en llegarme el dinero?',
     answer:
-      'Absolutamente. SmartCash utiliza Supabase con encriptacion de grado empresarial, autenticacion segura y politicas de acceso por roles (RLS). Tus datos financieros estan protegidos con los mismos estandares que usan los bancos.',
+      'Una vez que aceptas la oferta, el dinero se transfiere a tu cuenta en menos de 24 horas. En la mayoria de los casos, el mismo dia.',
   },
   {
-    question: 'Puedo acceder desde mi celular?',
+    question: 'Que tipo de cheques aceptan?',
     answer:
-      'Si. SmartCash cuenta con una app movil nativa para iOS y Android que permite operar desde cualquier lugar: fotografiar cheques, crear movimientos, consultar el dashboard y mas. Ademas, la plataforma web es completamente responsive.',
+      'Aceptamos cheques de los principales bancos de Ecuador. Cada cheque debe estar vinculado a una factura especifica, ya que cada factura representa una negociacion independiente.',
   },
   {
-    question: 'Cuanto tiempo toma la implementacion?',
+    question: 'Es seguro operar con SmartCash?',
     answer:
-      'Dependiendo del plan, la implementacion toma entre 3 y 7 dias. Incluye configuracion del sistema, migracion de datos existentes, capacitacion de tu equipo y soporte durante las primeras operaciones.',
+      'Absolutamente. Cada operacion genera un pagare digital como respaldo. Toda tu informacion esta protegida con encriptacion de grado empresarial. Ademas, puedes consultar el estado de tus operaciones en cualquier momento desde tu portal de cliente.',
   },
   {
-    question: 'Ofrecen soporte tecnico?',
+    question: 'Puedo hacer operaciones recurrentes?',
     answer:
-      'Si. Todos los planes incluyen soporte tecnico. El plan Basico incluye soporte por email, el Profesional soporte prioritario, y el Empresarial soporte dedicado 24/7 con un consultor asignado a tu cuenta.',
+      'Si, y es lo que recomendamos. Los clientes recurrentes obtienen mejores condiciones y un proceso mas agil. Mientras mas operes con nosotros, mejor te conocemos y mas rapido procesamos tus solicitudes.',
   },
 ];
 
@@ -142,7 +142,7 @@ export function FAQ() {
               Resolvemos tus <span className="text-teal-gradient">Dudas</span>
             </h2>
             <p className="text-xl text-gray-300">
-              Todo lo que necesitas saber sobre SmartCash y el factoring digital
+              Todo lo que necesitas saber antes de convertir tus cheques en efectivo
             </p>
           </motion.div>
 

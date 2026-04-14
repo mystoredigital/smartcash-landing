@@ -11,7 +11,7 @@ export function Footer() {
             <img src="/logo-smartcash.png" alt="SmartCash Logo" className="h-10" />
           </div>
           <p className="text-gray-400">
-            Factoring digital inteligente para Ecuador · Liquidez inmediata y control total
+            Efectivo inmediato por tus cheques · Servicio de factoring confiable en Ecuador
           </p>
 
           {/* Social media links */}

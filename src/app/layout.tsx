@@ -6,18 +6,19 @@ import { StructuredData } from "@/components/ui/StructuredData";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://smartcash.com';
 
 export const metadata: Metadata = {
-  title: "SmartCash - Factoring Digital para Ecuador | Liquidez Inmediata",
-  description: "Sistema de gestion de factoring digital que convierte tus facturas en efectivo al instante. Dashboard inteligente, pagares digitales, reportes en tiempo real. Desarrollado para el mercado ecuatoriano.",
+  title: "SmartCash - Convierte tus Cheques en Efectivo Hoy | Ecuador",
+  description: "Necesitas liquidez? SmartCash te da efectivo inmediato por tus cheques. Sin tramites bancarios, comisiones transparentes. Servicio de factoring confiable en Ecuador.",
   keywords: [
+    "cobrar cheques Ecuador",
+    "liquidez inmediata Ecuador",
     "factoring Ecuador",
-    "sistema de factoring",
-    "gestion de factoring",
-    "factoring digital Ecuador",
-    "descuento de facturas Ecuador",
-    "liquidez empresarial Ecuador",
-    "pagares digitales",
-    "factoring software",
+    "efectivo por cheques",
+    "descuento de cheques",
+    "liquidez empresarial",
+    "cambio de cheques Ecuador",
     "smartcash",
+    "factoring Quito",
+    "factoring Guayaquil",
   ],
   authors: [{ name: "SmartCash" }],
   creator: "SmartCash",
@@ -32,8 +33,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "SmartCash - Factoring Digital para Ecuador | Liquidez Inmediata",
-    description: "Convierte facturas en efectivo al instante. Dashboard inteligente, pagares digitales, reportes en tiempo real. Desarrollado para Ecuador.",
+    title: "SmartCash - Convierte tus Cheques en Efectivo Hoy | Ecuador",
+    description: "Necesitas liquidez? Te damos efectivo inmediato por tus cheques. Comisiones transparentes, sin tramites bancarios. Servicio de factoring en Ecuador.",
     url: siteUrl,
     siteName: 'SmartCash',
     images: [
@@ -49,8 +50,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "SmartCash - Factoring Digital para Ecuador",
-    description: "Convierte facturas en efectivo al instante. Sistema integral de factoring para Ecuador.",
+    title: "SmartCash - Efectivo Inmediato por tus Cheques",
+    description: "Necesitas liquidez? Te damos efectivo hoy por tus cheques. Servicio de factoring en Ecuador.",
     images: ['/logo-smartcash.png'],
   },
   robots: {

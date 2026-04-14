@@ -2,54 +2,17 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { CheckIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import { CheckIcon, SparklesIcon, CalculatorIcon } from '@heroicons/react/24/outline';
 import { scrollToElement } from '@/lib/utils';
-import { trackCustomEvent } from '@/lib/fbpixel';
+import { trackEvent } from '@/lib/fbpixel';
 
-const plans = [
-  {
-    name: 'Basico',
-    description: 'Ideal para operaciones de factoring pequenas que inician su digitalizacion',
-    features: [
-      'Hasta 50 clientes',
-      'Dashboard basico',
-      'Gestion de movimientos',
-      'Pagares digitales',
-      'Soporte por email',
-      'Setup en 3 dias',
-    ],
-    highlighted: false,
-  },
-  {
-    name: 'Profesional',
-    description: 'Para empresas de factoring en crecimiento que necesitan control total',
-    features: [
-      'Clientes ilimitados',
-      'Dashboard completo con analitica',
-      'Reportes avanzados',
-      'Portal de clientes',
-      'App movil incluida',
-      'Firma electronica de pagares',
-      'Soporte prioritario',
-      'Setup en 5 dias',
-    ],
-    highlighted: true,
-  },
-  {
-    name: 'Empresarial',
-    description: 'Solucion completa para operaciones de factoring de gran escala',
-    features: [
-      'Todo lo del plan Profesional',
-      'Multi-sucursal',
-      'API de integracion',
-      'Integraciones personalizadas',
-      'Soporte dedicado 24/7',
-      'Implementacion a medida',
-      'Capacitacion del equipo',
-      'Consultor asignado',
-    ],
-    highlighted: false,
-  },
+const transparencyPoints = [
+  'Te mostramos la comision exacta antes de cerrar',
+  'Sin cargos ocultos ni letra pequena',
+  'La tasa se calcula segun el plazo del cheque',
+  'Recibes un pagare digital como respaldo',
+  'Puedes consultar el estado de tu operacion en linea',
+  'Historial completo de todas tus transacciones',
 ];
 
 export function Pricing() {
@@ -98,83 +61,74 @@ export function Pricing() {
           <motion.div variants={itemVariants} className="text-center space-y-4">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-sm font-medium">
               <SparklesIcon className="w-4 h-4 mr-2" />
-              Planes Flexibles
+              Transparencia Total
             </div>
             <h2 className="text-4xl sm:text-5xl font-display font-bold text-white">
-              Elige tu <span className="text-teal-gradient">Plan Ideal</span>
+              Sabes Exactamente{' '}
+              <span className="text-teal-gradient">Cuanto Recibes</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Soluciones que se adaptan al tamano de tu operacion de factoring
+              Nada de sorpresas. Te mostramos los numeros claros antes de que tomes la decision.
             </p>
           </motion.div>
 
-          {/* Plans grid */}
-          <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {plans.map((plan, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className={`relative group rounded-2xl p-8 space-y-6 border transition-all duration-300 ${
-                  plan.highlighted
-                    ? 'bg-dark-800/80 border-teal-500/50 shadow-lg shadow-teal-500/10'
-                    : 'bg-dark-800/30 border-teal-500/10 hover:border-teal-500/30'
-                }`}
-              >
-                {plan.highlighted && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-teal-gradient text-white text-xs font-bold px-4 py-1.5 rounded-full">
-                      Mas Popular
-                    </div>
-                  </div>
-                )}
-
-                {/* Plan name */}
-                <div className="space-y-2">
-                  <h3 className="text-xl font-display font-bold text-white">
-                    {plan.name}
+          {/* How it works financially */}
+          <motion.div variants={itemVariants} className="max-w-4xl mx-auto">
+            <div className="bg-dark-800/80 border border-teal-500/30 rounded-2xl p-8 sm:p-12 space-y-8">
+              {/* Example */}
+              <div className="text-center space-y-4">
+                <div className="inline-flex items-center space-x-3">
+                  <CalculatorIcon className="w-8 h-8 text-teal-400" />
+                  <h3 className="text-2xl font-display font-bold text-white">
+                    Ejemplo de Operacion
                   </h3>
-                  <p className="text-sm text-gray-400">{plan.description}</p>
                 </div>
+                <p className="text-gray-400">Asi de claro es operar con SmartCash</p>
+              </div>
 
-                {/* Price CTA */}
-                <div className="py-4">
-                  <span className="text-2xl font-bold text-teal-400">Cotizacion Personalizada</span>
-                  <p className="text-gray-500 text-sm mt-1">Segun volumen de operaciones</p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                <div className="bg-dark-900/50 rounded-xl p-6 border border-teal-500/10">
+                  <p className="text-gray-400 text-sm mb-2">Valor del Cheque</p>
+                  <p className="text-3xl font-bold text-white">$5,000</p>
+                  <p className="text-gray-500 text-xs mt-1">Plazo: 60 dias</p>
                 </div>
-
-                {/* Features */}
-                <div className="space-y-3 flex-grow">
-                  {plan.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-start space-x-3">
-                      <CheckIcon className="w-5 h-5 text-teal-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-gray-300">{feature}</span>
-                    </div>
-                  ))}
+                <div className="bg-dark-900/50 rounded-xl p-6 border border-teal-500/10">
+                  <p className="text-gray-400 text-sm mb-2">Comision SmartCash</p>
+                  <p className="text-3xl font-bold text-teal-400">Transparente</p>
+                  <p className="text-gray-500 text-xs mt-1">Calculada segun plazo</p>
                 </div>
+                <div className="bg-teal-500/10 rounded-xl p-6 border border-teal-500/30">
+                  <p className="text-teal-400 text-sm mb-2 font-semibold">Tu Recibes</p>
+                  <p className="text-3xl font-bold text-teal-400">Hoy Mismo</p>
+                  <p className="text-gray-500 text-xs mt-1">Directo a tu cuenta</p>
+                </div>
+              </div>
 
-                {/* CTA */}
+              {/* Transparency points */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                {transparencyPoints.map((point, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <CheckIcon className="w-5 h-5 text-teal-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-300">{point}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <div className="text-center pt-4">
                 <motion.button
-                  onClick={() => { trackCustomEvent('PlanSelected', { plan_name: plan.name }); scrollToElement('contact'); }}
-                  className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 ${
-                    plan.highlighted
-                      ? 'btn-primary'
-                      : 'bg-dark-700 text-white border border-teal-500/20 hover:border-teal-500/50 hover:bg-dark-600'
-                  }`}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  onClick={() => { trackEvent('Schedule', { content_name: 'Pricing - Cotizar' }); scrollToElement('contact'); }}
+                  className="btn-primary text-lg px-10 py-4"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  Solicitar Cotizacion
+                  Cotizar Mi Cheque
                 </motion.button>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Note */}
-          <motion.div variants={itemVariants} className="text-center">
-            <p className="text-gray-400 text-sm">
-              Todos los planes incluyen demo gratuita y soporte de implementacion.
-              Los precios se ajustan segun el volumen de operaciones.
-            </p>
+                <p className="text-gray-500 text-sm mt-4">
+                  Sin compromiso. Te damos la cotizacion y tu decides.
+                </p>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </div>

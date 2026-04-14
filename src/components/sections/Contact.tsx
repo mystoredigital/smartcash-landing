@@ -11,7 +11,7 @@ export function Contact() {
     threshold: 0.1,
   });
 
-  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@smartcash.com';
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@smartcash.ec';
   const contactPhone = process.env.NEXT_PUBLIC_CONTACT_PHONE || '+593 99 000 0000';
 
   return (
@@ -30,12 +30,12 @@ export function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Digitaliza tu Factoring{' '}
-            <span className="text-teal-gradient">Hoy</span>
+            Convierte tu Cheque en{' '}
+            <span className="text-teal-gradient">Efectivo Hoy</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
-            Completa el formulario y obtén una demo personalizada de SmartCash.
-            Te mostramos cómo transformar tus operaciones de factoring.
+            Dejanos tus datos y te contactamos para darte una cotizacion
+            personalizada. Sin compromiso.
           </p>
         </motion.div>
 
@@ -50,10 +50,10 @@ export function Contact() {
             >
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-white mb-2">
-                  Solicita tu Demo Gratuita
+                  Quiero Cobrar Mi Cheque
                 </h3>
                 <p className="text-gray-400">
-                  Completa los datos y te contactaremos en menos de 24 horas
+                  Completa tus datos y te contactamos en menos de 24 horas
                 </p>
               </div>
 
@@ -103,29 +103,29 @@ export function Contact() {
               className="glass p-6 rounded-2xl"
             >
               <h4 className="text-lg font-semibold text-white mb-4">
-                Garantias
+                Por que Confiar en Nosotros
               </h4>
               <div className="space-y-3 text-sm">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-teal-500 rounded-full" />
-                  <span className="text-gray-300">Respuesta en 24hrs garantizada</span>
+                  <span className="text-gray-300">Respuesta en menos de 24 horas</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-teal-500 rounded-full" />
-                  <span className="text-gray-300">Demo personalizada gratuita</span>
+                  <span className="text-gray-300">Comisiones claras desde el inicio</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-teal-500 rounded-full" />
-                  <span className="text-gray-300">Sin compromiso de compra</span>
+                  <span className="text-gray-300">Pagare digital como respaldo</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-teal-500 rounded-full" />
-                  <span className="text-gray-300">Soporte de implementacion incluido</span>
+                  <span className="text-gray-300">Portal para consultar tus operaciones</span>
                 </div>
               </div>
             </motion.div>
 
-            {/* Stats */}
+            {/* Quick stats */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -134,16 +134,16 @@ export function Contact() {
             >
               <div className="space-y-4">
                 <div>
+                  <div className="text-3xl font-bold text-teal-500">Hoy</div>
+                  <div className="text-gray-400 text-sm">Recibes tu dinero</div>
+                </div>
+                <div>
                   <div className="text-3xl font-bold text-teal-500">100%</div>
-                  <div className="text-gray-400 text-sm">Digital</div>
+                  <div className="text-gray-400 text-sm">Transparente</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-teal-500">Ecuador</div>
-                  <div className="text-gray-400 text-sm">Hecho para ti</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-teal-500">24/7</div>
-                  <div className="text-gray-400 text-sm">Disponibilidad</div>
+                  <div className="text-gray-400 text-sm">Servicio local</div>
                 </div>
               </div>
             </motion.div>

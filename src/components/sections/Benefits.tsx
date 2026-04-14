@@ -3,42 +3,42 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import {
-  DocumentMinusIcon,
-  CalculatorIcon,
-  EyeIcon,
-  ShieldCheckIcon,
+  ArrowTrendingUpIcon,
+  BuildingStorefrontIcon,
+  ArrowPathIcon,
+  HandThumbUpIcon,
   BoltIcon,
 } from '@heroicons/react/24/outline';
 import { trackEvent } from '@/lib/fbpixel';
 
 const benefits = [
   {
-    icon: DocumentMinusIcon,
-    title: 'Elimina el Papeleo',
-    description: 'Todo digital: facturas, cheques, pagares y comprobantes. Adjunta fotos desde tu celular y olvida el papel.',
+    icon: ArrowTrendingUpIcon,
+    title: 'Haz Crecer tu Negocio',
+    description: 'Con liquidez inmediata puedes invertir en inventario, pagar proveedores o aprovechar oportunidades sin esperar a que te paguen.',
   },
   {
-    icon: CalculatorIcon,
-    title: 'Reduce Errores de Calculo',
-    description: 'Comisiones, IVA, plazos de cobro y liquidaciones calculadas automaticamente. Cero errores humanos.',
+    icon: BuildingStorefrontIcon,
+    title: 'Para Todo Tipo de Negocio',
+    description: 'Si tienes cheques por cobrar de tus clientes, SmartCash te sirve. Comercios, distribuidoras, servicios, construccion y mas.',
   },
   {
-    icon: EyeIcon,
-    title: 'Transparencia Total',
-    description: 'Tus clientes rastrean sus operaciones en el portal publico. 6 estados de seguimiento en tiempo real.',
+    icon: ArrowPathIcon,
+    title: 'Clientes Recurrentes',
+    description: 'Mientras mas operes con nosotros, mejores condiciones te ofrecemos. Construimos una relacion a largo plazo contigo.',
   },
   {
-    icon: ShieldCheckIcon,
-    title: 'Cumplimiento Normativo',
-    description: 'Validacion de RUC, dias habiles ecuatorianos, feriados nacionales y firma electronica de pagares.',
+    icon: HandThumbUpIcon,
+    title: 'Sin Letra Pequena',
+    description: 'Te mostramos la comision antes de cerrar. Sin cargos ocultos, sin sorpresas. Lo que ves es lo que pagas.',
   },
 ];
 
 const stats = [
-  { value: '99.9%', label: 'Uptime' },
-  { value: '< 5 min', label: 'Por liquidacion' },
-  { value: '6', label: 'Estados de seguimiento' },
-  { value: '100%', label: 'Digital' },
+  { value: '24h', label: 'Tiempo maximo de respuesta' },
+  { value: '100%', label: 'Operaciones transparentes' },
+  { value: 'Digital', label: 'Todo desde tu celular' },
+  { value: 'Ecuador', label: 'Hecho para ti' },
 ];
 
 export function Benefits() {
@@ -87,16 +87,15 @@ export function Benefits() {
           <motion.div variants={itemVariants} className="text-center space-y-4">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-sm font-medium">
               <BoltIcon className="w-4 h-4 mr-2" />
-              Ventajas Comprobadas
+              Beneficios Reales
             </div>
             <h2 className="text-4xl sm:text-5xl font-display font-bold text-white">
-              Por que Elegir{' '}
-              <span className="text-teal-gradient">SmartCash</span>
+              Tu Negocio No Puede{' '}
+              <span className="text-teal-gradient">Esperar</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Deja atras los procesos manuales y las hojas de calculo.{' '}
-              <span className="text-teal-400 font-semibold">Automatiza tu factoring</span>{' '}
-              con la tecnologia que tu negocio merece.
+              Cada dia que esperas a cobrar un cheque es un dia que{' '}
+              <span className="text-teal-400 font-semibold">tu dinero no esta trabajando para ti</span>.
             </p>
           </motion.div>
 
@@ -127,7 +126,7 @@ export function Benefits() {
           <motion.div variants={itemVariants} className="text-center">
             <div className="bg-dark-800/50 border border-teal-500/20 rounded-2xl p-8 max-w-4xl mx-auto">
               <h3 className="text-2xl font-display font-bold text-white mb-8">
-                <span className="text-teal-gradient">Numeros</span> que Hablan por Si Solos
+                Nuestro <span className="text-teal-gradient">Compromiso</span> Contigo
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 {stats.map((stat, index) => (
@@ -144,19 +143,20 @@ export function Benefits() {
           <motion.div variants={itemVariants} className="text-center">
             <div className="max-w-3xl mx-auto space-y-6">
               <h3 className="text-3xl font-display font-bold text-white">
-                Listo para <span className="text-teal-gradient">Modernizar</span> tu Factoring?
+                Deja de Esperar,{' '}
+                <span className="text-teal-gradient">Cobra Hoy</span>
               </h3>
               <p className="text-lg text-gray-300">
-                Descubre como SmartCash puede darte el control total de tus
-                operaciones con una plataforma 100% digital
+                Miles de empresarios ya confian en SmartCash para tener
+                liquidez cuando la necesitan
               </p>
               <motion.button
-                onClick={() => { trackEvent('Schedule', { content_name: 'Benefits - Demo' }); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}
+                onClick={() => { trackEvent('Schedule', { content_name: 'Benefits - Contactar' }); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}
                 className="btn-primary text-lg px-12 py-5 group"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Empezar Ahora
+                Quiero Mi Dinero
                 <BoltIcon className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform inline" />
               </motion.button>
             </div>
