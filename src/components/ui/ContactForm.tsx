@@ -87,16 +87,16 @@ export function ContactForm() {
       const locationId = process.env.NEXT_PUBLIC_GHL_LOCATION_ID;
 
       if (apiKey) {
-        // Separar nombre y apellido
         const nameParts = formData.name.trim().split(' ');
         const firstName = nameParts[0] || '';
         const lastName = nameParts.slice(1).join(' ') || '';
 
-        await fetch('https://rest.gohighlevel.com/v1/contacts/', {
+        await fetch('https://services.leadconnectorhq.com/contacts/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${apiKey}`,
+            'Version': '2021-07-28',
           },
           body: JSON.stringify({
             firstName,
@@ -107,10 +107,10 @@ export function ContactForm() {
             locationId,
             source: 'SmartCash Landing Page',
             tags: ['smartcash-lead', 'landing-page'],
-            customField: {
-              monto_cheque: formData.chequeAmount,
-              mensaje: formData.message,
-            },
+            customFields: [
+              { id: 'MSrY6qoPbTFRZeWqrtQI', value: formData.chequeAmount },
+              { id: 'WxPjPYXDaaiSLI1s4GYO', value: formData.message },
+            ],
           }),
         });
       }
