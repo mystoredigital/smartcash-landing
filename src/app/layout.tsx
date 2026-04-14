@@ -84,9 +84,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        <link rel="icon" href="/smartcash-icon.png" type="image/png" />
-        <link rel="shortcut icon" href="/smartcash-icon.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/smartcash-icon.png" />
+        <link rel="icon" href="/isotipo-smartcash.png" type="image/png" />
+        <link rel="shortcut icon" href="/isotipo-smartcash.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/isotipo-smartcash.png" />
         <StructuredData />
         {fbPixelId && (
           <Script id="facebook-pixel" strategy="afterInteractive">
