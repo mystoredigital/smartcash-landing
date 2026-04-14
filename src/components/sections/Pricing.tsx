@@ -89,8 +89,8 @@ export function Pricing() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
                 <div className="bg-dark-900/50 rounded-xl p-6 border border-teal-500/10">
                   <p className="text-gray-400 text-sm mb-2">Valor del Cheque</p>
-                  <p className="text-3xl font-bold text-white">$5,000</p>
-                  <p className="text-gray-500 text-xs mt-1">Plazo: 60 dias</p>
+                  <p className="text-3xl font-bold text-white">$600</p>
+                  <p className="text-gray-500 text-xs mt-1">Plazo: 30 dias</p>
                 </div>
                 <div className="bg-dark-900/50 rounded-xl p-6 border border-teal-500/10">
                   <p className="text-gray-400 text-sm mb-2">Comision SmartCash</p>

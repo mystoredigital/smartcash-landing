@@ -19,11 +19,11 @@ interface FormErrors {
 }
 
 const amountOptions = [
-  { value: '$500 - $2,000', label: '$500 - $2,000' },
-  { value: '$2,000 - $5,000', label: '$2,000 - $5,000' },
-  { value: '$5,000 - $10,000', label: '$5,000 - $10,000' },
-  { value: '$10,000 - $25,000', label: '$10,000 - $25,000' },
-  { value: '$25,000+', label: 'Mas de $25,000' },
+  { value: '$300 - $500', label: '$300 - $500' },
+  { value: '$500 - $1,000', label: '$500 - $1,000' },
+  { value: '$1,000 - $2,000', label: '$1,000 - $2,000' },
+  { value: '$2,000 - $3,000', label: '$2,000 - $3,000' },
+  { value: '$3,000 - $4,000', label: '$3,000 - $4,000' },
 ];
 
 export function ContactForm() {
