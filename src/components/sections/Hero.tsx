@@ -40,10 +40,6 @@ const floatingIconVariants = {
 };
 
 export function Hero() {
-  const handleCTAClick = () => {
-    trackEvent('Schedule', { content_name: 'Hero - Portal' });
-    scrollToElement('contact');
-  };
 
   return (
     <section
@@ -143,15 +139,18 @@ export function Hero() {
 
           {/* CTA buttons */}
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <motion.button
-              onClick={handleCTAClick}
-              className="btn-primary text-lg px-12 py-5 group"
+            <motion.a
+              href="https://app.smartcash.ec/portal"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent('Schedule', { content_name: 'Hero - Portal' })}
+              className="btn-primary text-lg px-12 py-5 group inline-block"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Portal
               <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform inline" />
-            </motion.button>
+            </motion.a>
 
             <motion.button
               onClick={() => { trackCustomEvent('ViewContent_HowItWorks', { content_name: 'Ver Como Funciona' }); scrollToElement('how-it-works'); }}

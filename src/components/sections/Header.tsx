@@ -84,12 +84,14 @@ export function Header() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="hidden lg:block"
           >
-            <button
-              onClick={() => handleNavClick('contact')}
+            <a
+              href="https://app.smartcash.ec/portal"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary text-sm"
             >
               Portal
-            </button>
+            </a>
           </motion.div>
 
           {/* Mobile menu button */}
@@ -133,15 +135,17 @@ export function Header() {
                   {item.name}
                 </motion.button>
               ))}
-              <motion.button
+              <motion.a
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3, delay: 0.6 }}
-                onClick={() => handleNavClick('contact')}
-                className="btn-primary w-full mt-4 text-sm"
+                href="https://app.smartcash.ec/portal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary w-full mt-4 text-sm block text-center"
               >
                 Portal
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         )}

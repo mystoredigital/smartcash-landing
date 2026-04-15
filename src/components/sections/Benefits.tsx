@@ -9,7 +9,6 @@ import {
   HandThumbUpIcon,
   BoltIcon,
 } from '@heroicons/react/24/outline';
-import { trackEvent } from '@/lib/fbpixel';
 
 const benefits = [
   {
@@ -150,15 +149,17 @@ export function Benefits() {
                 Miles de empresarios ya confian en SmartCash para tener
                 liquidez cuando la necesitan
               </p>
-              <motion.button
-                onClick={() => { trackEvent('Schedule', { content_name: 'Benefits - Contactar' }); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}
-                className="btn-primary text-lg px-12 py-5 group"
+              <motion.a
+                href="https://app.smartcash.ec/portal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary text-lg px-12 py-5 group inline-block"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Portal
                 <BoltIcon className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform inline" />
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         </motion.div>
