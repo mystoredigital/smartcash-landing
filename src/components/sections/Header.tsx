@@ -88,7 +88,7 @@ export function Header() {
               onClick={() => handleNavClick('contact')}
               className="btn-primary text-sm"
             >
-              Quiero Mi Dinero
+              Portal
             </button>
           </motion.div>
 
@@ -140,7 +140,7 @@ export function Header() {
                 onClick={() => handleNavClick('contact')}
                 className="btn-primary w-full mt-4 text-sm"
               >
-                Quiero Mi Dinero
+                Portal
               </motion.button>
             </div>
           </motion.div>
